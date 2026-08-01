@@ -5,13 +5,13 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
     <LangVersion>10</LangVersion>
     <AssemblyName>SmartSystemMenu</AssemblyName>
     <RootNamespace>SmartSystemMenu</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Management" />
-    <Reference Include="UIAutomationClient" />
-    <Reference Include="UIAutomationTypes" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
+    <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
   </ItemGroup>
 </Project>
