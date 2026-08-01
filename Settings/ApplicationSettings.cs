@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SmartSystemMenu.HotKeys;
 
 namespace SmartSystemMenu.Settings
 {
