@@ -5,6 +5,8 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using SmartSystemMenu.Native.Structs;
 
+using DrawingPoint = System.Drawing.Point;
+
 namespace SmartSystemMenu.Forms
 {
     /// <summary>
@@ -64,7 +66,7 @@ namespace SmartSystemMenu.Forms
             if (locY + ih > wa.Bottom) locY = cursor.Y - ih - 20;
             if (locX < wa.Left) locX = wa.Left + 8;
             if (locY < wa.Top) locY = wa.Top + 8;
-            Location = new Point(locX, locY);
+            Location = new DrawingPoint(locX, locY);
             ClientSize = new Size(iw, ih);
 
             // 画显示器色块
