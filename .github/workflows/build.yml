@@ -1,0 +1,30 @@
+name: build
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore SmartSystemMenu8.csproj
+
+      - name: Build Release
+        run: dotnet build SmartSystemMenu8.csproj -c Release --no-restore
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartSystemMenu-win-x64
+          path: bin/Release/net8.0-windows/
+          if-no-files-found: error
